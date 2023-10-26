@@ -28,24 +28,24 @@ public class MergeSort {
 
     public static int[] merge(int[] left, int[] right) {
         int[] result = new int[left.length + right.length];
-        int leftPtr = 0;
-        int rightPtr = 0;
-        int resultPtr = 0;
+        int leftIndex = 0;
+        int rightIndex = 0;
+        int resultIndex = 0;
 
-        while (leftPtr < left.length && rightPtr < right.length) {
-            if (left[leftPtr] < right[rightPtr]) {
-                result[resultPtr++] = left[leftPtr++];
+        while (leftIndex < left.length && rightIndex < right.length) {
+            if (left[leftIndex] < right[rightIndex]) {
+                result[resultIndex++] = left[leftIndex++];
             } else {
-                result[resultPtr++] = right[rightPtr++];
+                result[resultIndex++] = right[rightIndex++];
             }
         }
 
-        while (leftPtr < left.length) {
-            result[resultPtr++] = left[leftPtr++];
+        while (leftIndex < left.length) {
+            result[resultIndex++] = left[leftIndex++];
         }
 
-        while (rightPtr < right.length) {
-            result[resultPtr++] = right[rightPtr++];
+        while (rightIndex < right.length) {
+            result[resultIndex++] = right[rightIndex++];
         }
 
         return result;
